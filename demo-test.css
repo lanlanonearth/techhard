@@ -1,0 +1,348 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --duration: 3s;
+  --valve: 0.5s;
+  --delay: 2.5s;
+  --offset: 300px;
+  --followthru: 3px;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.global-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #000000;
+}
+
+.demo-container {
+  width: 75vmin;
+  height: 75vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+@keyframes slide-pipe-1 {
+    0% {
+      transform: translate(0px, calc(var(--offset) * -1));
+    }
+    20% { /* pipe-1 slide in */
+      transform: translate(0px, 0px);
+    }
+    33% { /* pipe-2 slide in */
+      transform: translate(0px, 0px);
+    }
+    34% {
+      transform: translate(0px, calc(var(--followthru) * -1));
+    }
+    35% {
+      transform: translate(0px, 0px);
+    }
+    48% { /* pipe-3 slide in */
+      transform: translate(0px, 0px);
+    }
+    49% {
+      transform: translate(calc(var(--followthru) * -1), 0px);
+    }
+    50% {
+      transform: translate(0px, 0px);
+    }
+    60% { /* pipe-4 slide in */
+      transform: translate(0px, 0px);
+    }
+    61%  {
+      transform: translate(calc(var(--followthru) * -1), 0px);
+    }
+    62% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+}
+
+@keyframes slide-pipe-2 {
+    0% {
+      transform: translate(0px, var(--offset));
+    }
+    33% { /* pipe-2 slide in */
+      transform: translate(0px, 0px);
+    }
+    48% { /* pipe-3 slide in */
+      transform: translate(0px, 0px);
+    }
+    49%  {
+      transform: translate(calc(var(--followthru) * -1), 0px);
+    }
+    50% {
+      transform: translate(0px, 0px);
+    }
+    60% { /* pipe-4 slide in */
+      transform: translate(0px, 0px);
+    }
+    61%  {
+      transform: translate(calc(var(--followthru) * -1), 0px);
+    }
+    62% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+}
+
+@keyframes slide-pipe-3 {
+    0% {
+      transform: translate(var(--offset), 0px);
+    }
+    48% { /* pipe-3 slide in */
+      transform: translate(0px, 0px);
+    }
+    60% { /* pipe-4 slide in */
+      transform: translate(0px, 0px);
+    }
+    61%  {
+      transform: translate(calc(var(--followthru) * -1), 0px);
+    }
+    62% {
+      transform: translate(0px, 0px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+}
+
+@keyframes slide-pipe-4 {
+    0% {
+      transform: translate(var(--offset), 0px);
+    }
+    60% { /* pipe-4 slide in */
+      transform: translate(0px, 0px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+}
+
+#pipe-1 {
+  animation-name: slide-pipe-1;
+  animation-duration: var(--duration);
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+#pipe-2 {
+  animation-name: slide-pipe-2;
+  animation-duration: var(--duration);
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+#pipe-3 {
+  animation-name: slide-pipe-3;
+  animation-duration: var(--duration);
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+#pipe-4 {
+  animation-name: slide-pipe-4;
+  animation-duration: var(--duration);
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+@keyframes valve-1-bar-top {
+  0% {
+    transform: rotate(0deg);
+    }
+  100% {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes valve-1-bar-middle {
+  0% {
+    transform: rotate(0deg);
+    }
+  100% {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes valve-1-bar-bottom {
+  0% {
+    transform: rotate(0deg);
+    }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes valve-1-bar-back {
+  0% {
+    transform: rotate(0deg);
+    }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+#valve-1-bar-middle,  #valve-1-bar-back, #valve-1-bar-bottom,
+#valve-1-bar-top {
+  transform-origin: 36.3px 40.195px;
+}
+
+@keyframes valve-2-left {
+  0% {
+    transform: rotate(0deg);
+    }
+  100% {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes valve-2-middle {
+  0% {
+    transform: rotate(0deg);
+    }
+  100% {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes valve-2-right {
+  0% {
+    transform: rotate(0deg);
+    }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes valve-2-back {
+  0% {
+    transform: rotate(0deg);
+    }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+#valve-2-middle,  #valve-2-back, #valve-2-right,
+#valve-2-left {
+  transform-origin: 83.631px 60.948px;
+}
+
+#valve-still, #valve-1-bar-2, #valve-1-bar-3, #valve-1-bar-4,
+ #valve-1-bar-bottom2, #valve-1-bar-bottom3, #valve-1-bar-bottom4
+ {
+  opacity: 0;
+  transform-origin: 36.3px 40.195px;
+}
+
+#valve-1-bar-top {
+    animation-name: valve-1-bar-top;
+    animation-duration: var(--valve);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: var(--delay);
+}
+
+#valve-1-bar-middle {
+    animation-name: valve-1-bar-middle;
+    animation-duration: var(--valve);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: var(--delay);
+}
+
+#valve-1-bar-bottom {
+    animation-name: valve-1-bar-bottom;
+    animation-duration: var(--valve);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: var(--delay);
+}
+
+#valve-1-bar-back {
+    animation-name: valve-1-bar-back;
+    animation-duration: var(--valve);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: var(--delay);
+}
+
+/* 2nd valve */
+#valve-2-left {
+    animation-name: valve-2-left;
+    animation-duration: var(--valve);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: var(--delay);
+}
+
+#valve-2-middle {
+    animation-name: valve-2-middle;
+    animation-duration: var(--valve);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: var(--delay);
+}
+
+#valve-2-right {
+    animation-name: valve-1-bar-right;
+    animation-duration: var(--valve);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: var(--delay);
+}
+
+#valve-2-back {
+    animation-name: valve-2-back;
+    animation-duration: var(--valve);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: var(--delay);
+}
+
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+#techhard-logo {
+  animation-name: show;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-delay: 4s;
+}
